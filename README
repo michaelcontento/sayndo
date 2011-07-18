@@ -67,7 +67,7 @@ Routes:
 
 
 
-Auth Types:
+Auth types and sessions:
 
 
     Here we create a session with the auth type "admin". In
@@ -93,7 +93,19 @@ Auth Types:
 
 
 
-    Destroy Sessions. Comming soon.
+    To destroy sessions just use res.destroySession() like that.
+
+        // Create a session and set the auth type to "user".
+        app.guest.GET['/'] = function(req, res) {
+            res.createSession({authType: 'user'}, 1);
+            res.render('/index.html', {msg: 'you have the auth type "guest"'});
+        };
+
+        // Destroy the current session.
+        app.user.GET['/'] = function(req, res) {
+            res.destroySession();
+            res.render('/index.html', {msg: 'you have the auth type "user"'});
+        };
 
 
 
@@ -157,6 +169,13 @@ Caching:
     it is needed we will find a solution to handle cache sizes
     that exceed 50 mb with redis or something like that. Just send
     me a message.
+
+
+
+Tests:
+
+    >.< Oh i know they are fucking important. Comming soon as
+    possible. Sorry for not supporting tests at the moment.
 
 
 
