@@ -18,6 +18,22 @@ Installation:
 
 
 
+    For session support the redis server is required. The redis
+    client for node gets installed on "npm install", but you have
+    to install the redis server by yourself on your mashine.
+
+
+
+    Install redis-server on Ubuntu:
+
+        $ sudo apt-get install redis-server
+
+
+
+    More information on http://redis.io
+
+
+
 Run server:
 
     // Start the server with default settings on 127.0.0.1:3000
