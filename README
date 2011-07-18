@@ -57,7 +57,7 @@ Routes:
     This route is called each time a user with auth type
     "guest" enters your app with a http GET request.
 
-        var app = require('./lib/server.js');
+        var app = require('sayndo');
 
         app.guest.GET['/'] = function(req, res) {
             res.render('/index.html', {msg: 'hello world'});

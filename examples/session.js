@@ -1,7 +1,7 @@
 /*
  * Dependencies.
  */
-var app = require('../lib/server.js');
+var app = require('sayndo');
 
 /*
  * Routes
