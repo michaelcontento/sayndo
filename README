@@ -1,1 +1,166 @@
-Comming soon.
+Introduction:
+
+    This is my first project i released. Suggestions, questions
+    and notices are welcome. Please report bugs as you find them.
+
+    So why did i have created this webserver? Because of performance
+    and usability aspects. This module is inspired by express. It
+    is a little bit faster than express, but not a replacement for
+    that greate framework. I also like the routing functions, where
+    you can define custom auth types.
+
+
+
+Installation:
+
+    $ git clone git@github.com:zyndiecate/sayndo.git
+    $ npm install
+
+
+
+Run server:
+
+    // Start the server with default settings on 127.0.0.1:3000
+    $ node app.js
+
+    // Start the server with custom settings on <host>:<port>
+    $ node app.js <host> <port>
+
+
+
+Configuration:
+
+    See lib/config.js. It´s well commented.
+
+
+
+Routes:
+
+
+    This route is called each time a user with auth type
+    "guest" enters your app with a http GET request.
+
+        var app = require('./lib/server.js');
+
+        app.guest.GET['/'] = function(req, res) {
+            res.render('/index.html', {msg: 'hello world'});
+        };
+
+
+
+    "app" contains all routes defined in lib/config.js and the
+    server "node", that is just a http server object.
+
+    "guests" in this example, is the auth type a user can have.
+    See lib/config.js and change it to your own.
+
+    "GET" in this example, is the http request method a user
+    used to enter your app. See lib/config.js and change it to
+    your own.
+
+    "['/']" in this example, is the request url.
+
+    Each route uses this structure to call the view function if
+    all components match:
+
+    app.<auth-type>.<REQUEST-METHOD>['<request-url>']
+
+
+
+Auth Types:
+
+
+    Here we create a session with the auth type "admin". In
+    this case the session is set for 10 minutes. After that
+    10 minutes the users auth type falls back to the default
+    auth type defined in lib/config.js
+
+        app.guest.GET['/'] = function(req, res) {
+            res.createSession({authType: admin, user: 'John'}, 10);
+            res.render('/index.html', {msg: 'hello world'});
+        };
+
+
+
+    If a user becomes admin with res.createSession(), he is
+    able to enter routes like the following. Where "req.session.user"
+    is the user name of the user you have set before, using
+    res.createSession().
+
+        app.admin.GET['/admin/dashboard'] = function(req, res) {
+            res.render('/dashboard/index.html', {msg: 'Welcome ' + req.session.user});
+        };
+
+
+
+    Destroy Sessions. Comming soon.
+
+
+
+Cookies:
+
+    Comming soon.
+
+
+
+Locals:
+
+    Locals are placeholder in views to insert data from the
+    server to a view, using the following syntax.
+
+        #{<local>}
+
+
+
+    App locals get inserted in each view. E.g. you can do the
+    following to set your app title. Yes, i know that is a
+    stupid example. A better one would be the case of a
+    dynamic menu for your app. But that is how it works.
+
+        <!-- views/index.html -->
+        <h1>#{title}</h1>
+
+        // lib/app_locals.js
+        var appLocals = {
+            title: function(req, res) {
+                return 'Sayndo';
+            }
+        };
+
+        module.exports = appLocals;
+
+
+
+    View locals get inserted in each view of a specific url.
+    E.g. you can do the following to set a message to a
+    specific view.
+
+        <!-- views/index.html -->
+        <h1>#{msg}</h1>
+
+        // app.js
+        app.guest.GET['/'] = function(req, res) {
+            res.createSession({authType: admin, user: 'John'}, 10);
+            res.render('/index.html', {msg: 'hello world'});
+        };
+
+
+
+Caching:
+
+    Static files and views get allways cached into nodes process
+    memory. That kind of caching only make sence if the cache size
+    dont exceed 50 mb. The given path´s of cacheable folder are
+    set in lib/config.js.
+
+    At the moment there is no other cache
+    solution supported. If it is needed we will find a solution
+    to handle cache sizes that exceed 50 mb with redis or some-
+    thing like that. Just send me a message.
+
+
+
+Questions and notices:
+
+    Send me a message on github.
+
