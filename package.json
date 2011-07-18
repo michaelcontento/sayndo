@@ -1,0 +1,16 @@
+{
+  "name": "sayndo",
+  "version": "0.0.1",
+  "description": "Fast and flexible web server with customized routing and authorization.",
+  "keywords": ["server", "framework", "routing", "authorization"],
+  "author": "Tim Schindler <tim.schindler@adcloud.com>",
+  "contributors": [
+    {"name": "Tim Schindler", "email": "tim.schindler@adcloud.com"}
+  ],
+  "dependencies": {
+    "hiredis": ">= 0.1.12",
+    "nodemon": ">= 0.5.3",
+    "redis": ">= 0.6.6"
+  },
+  "engines": { "node": ">= 0.4.9" }
+}
