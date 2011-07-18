@@ -14,6 +14,7 @@ Introduction:
 Installation:
 
     $ git clone git@github.com:zyndiecate/sayndo.git
+    $ cd sayndo/
     $ npm install
 
 
