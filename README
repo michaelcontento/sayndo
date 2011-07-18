@@ -153,10 +153,10 @@ Caching:
     dont exceed 50 mb. The given path´s of cacheable folder are
     set in lib/config.js.
 
-    At the moment there is no other cache
-    solution supported. If it is needed we will find a solution
-    to handle cache sizes that exceed 50 mb with redis or some-
-    thing like that. Just send me a message.
+    At the moment there is no other cache solution supported. If
+    it is needed we will find a solution to handle cache sizes
+    that exceed 50 mb with redis or something like that. Just send
+    me a message.
 
 
 
