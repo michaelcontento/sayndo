@@ -1,11 +1,15 @@
 {
-  "name": "sayndo",
-  "version": "0.0.1",
-  "description": "Fast and flexible web server with customized routing and authorization.",
-  "keywords": ["server", "framework", "routing", "authorization"],
   "author": "Tim Schindler <tim.schindler@adcloud.com>",
-  "contributors": [
-    {"name": "Tim Schindler", "email": "tim.schindler@adcloud.com"}
-  ],
-  "engines": { "node": ">= 0.4.9" }
+  "name": "sayndo",
+  "description": "Fast and flexible web server with customized routing and authorization.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zyndiecate/sayndo.git"
+  },
+  "engines": {
+    "node": ">=v0.4.9"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

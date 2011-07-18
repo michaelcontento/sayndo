@@ -9,9 +9,8 @@
   ],
   "dependencies": {
     "hiredis": ">= 0.1.12",
-    "nodemon": ">= 0.5.3",
     "redis": ">= 0.6.6",
-    "sayndo": ">= 0.0.1"
+    "sayndo": ">= 0.0.0"
   },
   "engines": { "node": ">= 0.4.9" }
 }
