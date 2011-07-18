@@ -196,6 +196,30 @@ Tests:
 
 
 
+Benchmarks:
+
+    mashine:            Pentium(R) Dual-Core CPU T4400 @ 2.20GHz
+    duration:           30 seconds
+    concurrency:        1000 req/s
+    command:            siege -c1000 -t30S http://localhost:3000
+
+
+
+    results                     express            |            sayndo
+    _______________________________________________|___________________________
+                                                   |
+                        277 bytes    1034 bytes    |    229 bytes    1546 bytes
+                                                   |
+    total requests         7083          4411      |      44424         31674
+    transfered mb          1.87          4.39      |       9.70         46.70
+    latency (sec)          2.27          5.42      |       0.14          0.40
+    req/sec              240.92        148.27      |    1522.93       1071.52
+    mb/sec                 0.06          0.15      |       0.33          1.58
+    concurrency             546           804      |        207           423
+    longest request       22.05          9.32      |       9.13          9.54
+
+
+
 Questions and notices:
 
     Send me a message on github.
