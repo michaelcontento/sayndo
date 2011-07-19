@@ -173,7 +173,7 @@
 
 
 
-Locals:
+## Locals:
 
   Locals are placeholder in views to insert data from the
   server to a view, using the following syntax.
@@ -187,10 +187,14 @@ Locals:
   stupid example. A better one would be the case of a
   dynamic menu for your app. But that is how it works.
 
-    <!-- views/index.html -->
+
+
+  views/index.html
+
     <h1>#{title}</h1>
 
-    // lib/app_locals.js
+  lib/app_locals.js
+
     var appLocals = {
         title: function(req, res) {
             return 'Sayndo';
@@ -205,10 +209,14 @@ Locals:
   E.g. you can do the following to set a message to a
   specific view.
 
-    <!-- views/index.html -->
+
+
+  views/index.html
+
     <h1>#{msg}</h1>
 
-    // app.js
+  app.js
+
     app.guest.GET['/'] = function(req, res) {
         res.render('/index.html', {msg: 'hello world'});
     };
@@ -234,17 +242,17 @@ Locals:
 
 ## Tests:
 
-  >.< Oh i know they are fucking important. Comming soon as
+  Oh i know they are fucking important. Comming soon as
   possible. Sorry for not supporting tests at the moment.
 
 
 
 ## Benchmarks:
 
-  mashine:            Pentium(R) Dual-Core CPU T4400 @ 2.20GHz
-  duration:           30 seconds
-  concurrency:        1000 req/s
-  command:            siege -c1000 -t30S http://localhost:3000
+  ### mashine:            Pentium(R) Dual-Core CPU T4400 @ 2.20GHz
+  ### duration:           30 seconds
+  ### concurrency:        1000 req/s
+  ### command:            siege -c1000 -t30S http://localhost:3000
 
 
 
