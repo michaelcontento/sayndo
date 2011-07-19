@@ -169,7 +169,6 @@ Locals:
 
         // app.js
         app.guest.GET['/'] = function(req, res) {
-            res.createSession({authType: admin, user: 'John'}, 10);
             res.render('/index.html', {msg: 'hello world'});
         };
 
