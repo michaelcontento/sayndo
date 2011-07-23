@@ -242,7 +242,7 @@
 
 ## Tests:
 
-  Tests are implemented with "Vows":https://github.com/cloudhead/vows.
+  Tests are implemented with https://github.com/cloudhead/vows.
 
     $ sudo npm install vows -g
     $ vows lib/sayndo/tests/* --spec
