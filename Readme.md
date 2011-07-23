@@ -242,8 +242,14 @@
 
 ## Tests:
 
-  Oh i know they are fucking important. Comming soon as
-  possible. Sorry for not supporting tests at the moment.
+  Tests are implemented with "Vows":https://github.com/cloudhead/vows.
+
+    $ sudo npm install vows -g
+    $ vows lib/sayndo/tests/* --spec
+
+
+
+  Further information at http://vowsjs.org/
 
 
 
