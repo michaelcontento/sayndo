@@ -223,6 +223,35 @@
 
 
 
+## Socket.io
+
+  Server side.
+
+    var io = require('socket.io').listen(app.node);
+
+    io.sockets.on('connection', function (socket) {
+        console.log(socket);
+    });
+
+
+
+  Client side.
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost');
+
+        socket.on('connect', function () {
+            console.log('Client connected');
+        });
+    </script>
+
+
+
+  Try the example.
+
+
+
 ## Caching:
 
   Static files and views get allways cached into nodes process
