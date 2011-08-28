@@ -41,7 +41,7 @@
 
     $ node app.js
 
-  Start the server with custom settings on <host>:<port>
+  Start the server with custom settings on host:port
 
     $ node app.js <host> <port>
 
