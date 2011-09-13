@@ -92,7 +92,7 @@
   changing the given in lib/config.js.
 
   The auth type is required for authorized routes ot requested
-  url´s. A user with the auth type 'admin' can enter a route
+  url´s. A user with the auth type "admin" can enter a route
   like that.
 
     app.admin.GET['/dashboard'] = function(req, res) {
@@ -117,13 +117,19 @@
 
 
 
-  Create a new session with the authType 'admin' for only
+  Create a new session with the authType "admin" for only
   10 minutes. **To create a new valid session you need to define
   the "authType" attribute, related to the auth types in your
   config.js.**
 
+    res.session.write({authType: 'admin', user: 'John'}, 10);
 
-    res.session.write({authType: admin, user: 'John'}, 10);
+
+
+  Update an existing session is easy as well. Internally allready
+  given properties get overwritten.
+
+    res.session.update({authType: 'user'});
 
 
 
