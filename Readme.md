@@ -118,7 +118,9 @@
 
 
   Create a new session with the authType 'admin' for only
-  10 minutes.
+  10 minutes. **To create a new valid session you need to define
+  the "authType" attribute, related to the auth types in your
+  config.js.**
 
 
     res.session.write({authType: admin, user: 'John'}, 10);
