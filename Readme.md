@@ -117,6 +117,21 @@
 
 
 
+  Session specific messages can be written to the session object.
+  Give a user just that session property and the message will be
+  available like that. How to write sessions and their properties,
+  see the lines below.
+
+    res.session.message
+
+
+
+  **Note that the session message by default is just displayed
+  one time.** To change that just modify the behaviour in the
+  lib/app/app_local.js.
+
+
+
   Create a new session with the authType "admin" for only
   10 minutes. **To create a new valid session you need to define
   the "authType" attribute, related to the auth types in your
@@ -178,6 +193,19 @@
 
 
   For a more practical usage try the example.
+
+
+
+## Redirects:
+
+  To redirect clients just do that:
+
+    res.redirect('/redirect');
+
+
+
+  To let the user know, why he was redirected, set a session
+  message like described above.
 
 
 
