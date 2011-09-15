@@ -49,7 +49,7 @@
 
 ## Configuration:
 
-  See lib/config.js. It´s well commented.
+  See lib/config/config.js. It´s well commented.
 
 
 
@@ -192,8 +192,8 @@
 
   App locals get inserted in each view. E.g. you can do the
   following to set your app title. Yes, i know that is a
-  stupid example. A better one would be the case of a
-  dynamic menu for your app. But that is how it works.
+  stupid example. A better one would be the case of system
+  messages for your app. But that is how it works.
 
 
 
@@ -201,7 +201,7 @@
 
     <h1>#{title}</h1>
 
-  lib/app_locals.js
+  lib/app/app_locals.js
 
     var appLocals = {
         title: function(req, res) {
