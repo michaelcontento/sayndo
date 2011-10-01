@@ -19,19 +19,13 @@
 
 
 
-  For session support the redis server is required. The redis
+  For session support the riak server is required. The riak
   client for node gets installed on "npm install", but you have
-  to install the redis server by yourself on your mashine.
+  to install the riak server by yourself on your mashine.
 
 
 
-  Install redis-server on Ubuntu:
-
-    $ sudo apt-get install redis-server
-
-
-
-  More information on http://redis.io
+  More information on http://wiki.basho.com/
 
 
 
