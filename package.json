@@ -1,5 +1,5 @@
 {
-  "name": "sayndo",
+  "name": "sayndo-server",
   "version": "0.0.2",
   "description": "Fast and flexible web server with customized routing and authorization.",
   "keywords": ["server", "framework", "routing", "authorization"],
