@@ -303,10 +303,16 @@
 
   Tests are implemented with https://github.com/cloudhead/vows.
 
-    $ sudo npm install vows -g
+  Run the tests manually.
+  
     $ vows lib/sayndo/tests/* --spec
 
 
+  Or let npm call the testsuite.
+  
+    $ npm test
+    
+    
 
   Further information at http://vowsjs.org/
 
