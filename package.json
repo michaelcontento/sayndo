@@ -7,6 +7,9 @@
   "contributors": [
     {"name": "Tim Schindler", "email": "tim.schindler@adcloud.com"}
   ],
+  "scripts": {
+    "test": "vows lib/sayndo/tests/* --spec"
+  },
   "dependencies": {
     "riak-js": ">= 0.4.0",
     "sayndo": ">= 0.0.3",
