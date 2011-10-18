@@ -10,5 +10,7 @@
   "engines": {
     "node": ">=v0.4.9"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "logerize": ">= 0.0.1"
+  }
 }
