@@ -13,7 +13,8 @@
   "dependencies": {
     "riak-js": ">= 0.4.0",
     "sayndo": ">= 0.0.3",
-    "vows": ">= 0.5.11"
+    "vows": ">= 0.5.11",
+    "logerize": ">= 0.0.1"
   },
   "engines": { "node": ">= 0.4.9" }
 }
