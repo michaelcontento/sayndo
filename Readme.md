@@ -19,13 +19,13 @@
 
 
 
-  For session support the riak server is required. The riak
+  For session support the redis server is required. The redis
   client for node gets installed on "npm install", but you have
-  to install the riak server by yourself on your mashine.
+  to install the redis server by yourself on your mashine.
 
 
 
-  More information on http://wiki.basho.com/
+    $ sudo apt-get install redis-server
 
 
 
@@ -303,16 +303,10 @@
 
   Tests are implemented with https://github.com/cloudhead/vows.
 
-  Run the tests manually.
-  
+    $ sudo npm install vows -g
     $ vows lib/sayndo/tests/* --spec
 
 
-  Or let npm call the testsuite.
-  
-    $ npm test
-    
-    
 
   Further information at http://vowsjs.org/
 
