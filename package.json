@@ -8,10 +8,12 @@
     {"name": "Tim Schindler", "email": "tim.schindler@adcloud.com"}
   ],
   "scripts": {
-    "test": "vows lib/sayndo/tests/* --spec"
+    "test": "vows lib/sayndo/tests/* --spec",
+    "start": "node app.js"
   },
   "dependencies": {
-    "riak-js": ">= 0.4.0",
+    "redis": ">= 0.6.7",
+    "hiredis": ">= 0.1.12",
     "sayndo": ">= 0.0.3",
     "vows": ">= 0.5.11",
     "logerize": ">= 0.0.1"
