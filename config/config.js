@@ -15,27 +15,27 @@ var config = {
     /*
      * String of absolute path to all stylesheets.
      */
-    stylesheetPath: cwd + '/public/stylesheets',
+    stylesheetPath: cwd + '/public/stylesheet',
 
     /*
      * String of absolute path to all images.
      */
-    imagePath: cwd + '/public/images',
+    imagePath: cwd + '/public/image',
 
     /*
      * String of absolute path to all javascripts.
      */
-    javascriptPath: cwd + '/public/javascripts',
+    javascriptPath: cwd + '/public/javascript',
 
     /*
      * String of absolute path to all views.
      */
-    viewPath: cwd + '/views',
+    viewPath: cwd + '/view',
 
     /*
      * String of absoulte path to the layout.
      */
-    layoutPath: cwd + '/views/layout.html',
+    layoutPath: cwd + '/view/layout.html',
 
     /*
      * Array, containing objects, representing external sources.
