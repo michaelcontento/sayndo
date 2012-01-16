@@ -18,7 +18,7 @@ app.guest.GET['/'] = function(req, res) {
     console.log(res.session);
 
     res.session.write({authType: 'user'}, 1, function(err, sessionId) {
-        res.render('/index.html', {local: 'you have the auth type "guest" for 1 minute'});
+        res.render('/index.html', {local: 'you have the auth type "user" for 1 minute'});
     });
 };
 

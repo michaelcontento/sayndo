@@ -1,6 +1,6 @@
 {
   "name": "sayndo-server",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Fast and flexible web server with customized routing and authorization.",
   "keywords": ["server", "framework", "routing", "authorization"],
   "author": "Tim Schindler <tim.schindler@adcloud.com>",
@@ -8,7 +8,7 @@
     {"name": "Tim Schindler", "email": "tim.schindler@adcloud.com"}
   ],
   "scripts": {
-    "test": "vows lib/sayndo/tests/* --spec",
+    "test": "vows node_modules/sayndo/test/* --spec",
     "start": "node app.js"
   },
   "dependencies": {
