@@ -6,7 +6,11 @@ var app = require('sayndo');
 /*
  * Routes
  */
-app.guest.GET['/'] = function(req, res) {
-    res.render('/index.html', {local: 'hello world'});
+app.guest.GET['/setup'] = function(req, res) {
+    res.render('/setup.html');
+};
+
+app.guest.GET['/test'] = function(req, res) {
+    res.render('/test.html', {layout: 'test'});
 };
 

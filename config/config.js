@@ -8,34 +8,32 @@ var cwd = process.cwd();
  */
 var config = {
     /*
+     * Current working directory.
+     */
+    cwd: cwd,
+
+    /*
      * String of absolute path to all public folder and files.
      */
     publicPath: cwd + '/public',
 
     /*
-     * String of absolute path to all stylesheets.
+     * String of absolute path to all vendors.
      */
-    stylesheetPath: cwd + '/public/stylesheet',
-
-    /*
-     * String of absolute path to all images.
-     */
-    imagePath: cwd + '/public/image',
-
-    /*
-     * String of absolute path to all javascripts.
-     */
-    javascriptPath: cwd + '/public/javascript',
+    testPath: cwd + '/test/client',
 
     /*
      * String of absolute path to all views.
      */
-    viewPath: cwd + '/view',
+    viewPath: cwd + '/public/view',
 
     /*
      * String of absoulte path to the layout.
      */
-    layoutPath: cwd + '/view/layout.html',
+    layoutPath: {
+        default: cwd + '/public/view/layout/default_layout.html',
+        test: cwd + '/public/view/layout/test_layout.html'
+    },
 
     /*
      * Array, containing objects, representing external sources.
@@ -110,6 +108,16 @@ var config = {
             encoding: 'binary',
             contentType: 'image/x-icon',
             header: {'Content-Type': 'image/x-icon'},
+        },
+        'ttf': {
+            encoding: 'binary',
+            contentType: 'application/x-font-ttf',
+            header: {'Content-Type': 'application/x-font-ttf'},
+        },
+        'woff': {
+            encoding: 'binary',
+            contentType: 'application/x-font-woff',
+            header: {'Content-Type': 'application/x-font-woff'},
         },
         'css': {
             encoding: 'utf8',
