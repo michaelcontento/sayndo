@@ -1,11 +1,14 @@
 /*
- * Dependencies.
+ *
+ * Server site condig module.
+ *
+ */
+
+/*
+ * Module variables.
  */
 var cwd = process.cwd();
 
-/*
- * Config module.
- */
 var config = {
     /*
      * Current working directory.
@@ -13,7 +16,7 @@ var config = {
     cwd: cwd,
 
     /*
-     * String of absolute path to all public folder and files.
+     * String of absolute path to all app folder and files.
      */
     publicPath: cwd + '/public',
 
@@ -158,3 +161,4 @@ var config = {
 };
 
 module.exports = config;
+

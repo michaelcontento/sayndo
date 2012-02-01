@@ -5,9 +5,8 @@
  */
 
 /*
- * Dependencies.
+ * Module variables.
  */
-
 var appLocals = {
     /*
      * Set the app title globaly.
@@ -44,3 +43,4 @@ var appLocals = {
 };
 
 module.exports = appLocals;
+
