@@ -92,7 +92,8 @@ var view = {
      */
     render: function(req, res, viewPath, locals) {
         if(typeof locals !== 'object') locals = {};
-        if(typeof locals.layout !== 'string') locals.layout = 'default';
+        if(locals.layout === false) locals.layout = '';
+        else if(typeof locals.layout !== 'string') locals.layout = 'default';
 
         view.combineLocals(req, res, locals, function(combinedLocals) {
             var cachedView = view.cache[locals.layout + viewPath];

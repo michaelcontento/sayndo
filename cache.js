@@ -57,7 +57,10 @@ var cache = {
                     if(filePath.match(layoutPattern) !== null) return;
 
                     view.parseLocals(layoutHtml, {view: viewHtml}, function(html) {
-                        view.cache[type + filePath.replace(config.viewPath, '')] = html;
+                        var rawPath = filePath.replace(config.viewPath, '');
+
+                        view.cache[rawPath] = viewHtml;
+                        view.cache[type + rawPath] = html;
                     });
                 });
             });
