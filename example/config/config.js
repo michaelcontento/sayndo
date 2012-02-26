@@ -55,6 +55,11 @@ var config = {
     dependencies: [],
 
     /*
+     * Session lifetime in minutes.
+     */
+    ttl: 60 * 24 * 365, // 1 year
+
+    /*
      * Array of request methods the server have to support.
      * This request methods are also supported for the view
      * route functions.
@@ -83,7 +88,16 @@ var config = {
      * String of random character to create save hashes. The
      * security salt is a dependency for the session support.
      */
-    securitySalt: '2RFD6jDdrdmpp9790kjIhug76ZG76hoiUkjg',
+    securitySalt: 'jsdhh2hi3d237d89JKH78jhHIPP=00JKJnjn',
+
+    /*
+     *
+     */
+    mysql: {
+        user: 'user',
+        password: 'password',
+        database: 'database'
+    },
 
     /*
      * Array containing strings to ignore unwanted files and

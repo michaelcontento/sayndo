@@ -13,15 +13,14 @@
 
 ## Installation:
 
-    $ git clone git@github.com:zyndiecate/sayndo.git
-    $ cd sayndo/
     $ npm install
 
 
 
   For session support the redis server is required. The redis
   client for node gets installed on "npm install", but you have
-  to install the redis server by yourself on your mashine.
+  to install the redis server by yourself on your mashine. Linux
+  user do:
 
 
 
@@ -43,7 +42,17 @@
 
 ## Configuration:
 
-  See lib/config/config.js. It´s well commented.
+  You have to structure your directories like this:
+
+    app -
+        |- config -
+        |         |- config.js
+        |         |- app_locals.js
+        |
+        |- node_modules
+
+  For detailed information see example/config/config.js.
+  It´s well commented.
 
 
 
@@ -99,6 +108,8 @@
 
   The session object by default is just an empty object
   literal. You can access the current session like that.
+  How to write sessions and their properties, see the
+  lines below.
 
     res.session
 
@@ -111,27 +122,14 @@
 
 
 
-  Session specific messages can be written to the session object.
-  Give a user just that session property and the message will be
-  available like that. How to write sessions and their properties,
-  see the lines below.
-
-    res.session.message
-
-
-
-  **Note that the session message by default is just displayed
-  one time.** To change that just modify the behaviour in the
-  lib/app/app_local.js.
-
-
-
   Create a new session with the authType "admin" for only
   10 minutes. **To create a new valid session you need to define
   the "authType" attribute, related to the auth types in your
-  config.js.**
+  config.js.** You can set the "time to life" explicity. If it
+  is not provided by you, the "ttl" property of your config file
+  is used. Otherwise the default "ttl" is to 1 year.
 
-    res.session.write({authType: 'admin', user: 'John'}, 10);
+    res.session.write({authType: 'admin', user: 'John', ttl: 10} [, cb]);
 
 
 
@@ -194,12 +192,20 @@
 
   To redirect clients just do that:
 
-    res.redirect('/redirect');
+    res.view.redirect('/redirect');
 
 
 
   To let the user know, why he was redirected, set a session
   message like described above.
+
+
+
+## Sending Data:
+
+ Just to send Json or string data do:
+
+   res.view.send(stringOrObject);
 
 
 
@@ -248,7 +254,7 @@
   app.js
 
     app.guest.GET['/'] = function(req, res) {
-        res.render('/index.html', {msg: 'hello world'});
+        res.view.render('/index.html', {msg: 'hello world'});
     };
 
 
@@ -304,7 +310,7 @@
   Tests are implemented with https://github.com/cloudhead/vows.
 
     $ sudo npm install vows -g
-    $ vows lib/sayndo/tests/* --spec
+    $ vows node_modules/sayndo/test/* --spec
 
 
 
