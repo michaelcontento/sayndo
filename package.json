@@ -2,7 +2,7 @@
   "name": "sayndo",
   "author": "Tim Schindler <tim.schindler@adcloud.com>",
   "description": "Fast and flexible web server with customized routing and authorization.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "git://github.com/zyndiecate/sayndo.git"
@@ -11,7 +11,7 @@
     "node": ">=v0.4.8"
   },
   "scripts": {
-    "test": "vows /tests/* --spec"
+    "test": "vows tests/* --spec"
   },
   "dependencies": {
     "vows": ">= 0.5.11",
