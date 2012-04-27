@@ -13,48 +13,7 @@
 
 ## Installation:
 
-  To just use the server do:
-
     $ npm install
-
-
-
-  If you want to create a new app on top of sayndo, create
-  the app doing this:
-
-    $ sh node_modules/sayndo/bin/create-app.sh
-
-
-
-  Finally your app should look something like that:
-
-    your app -
-             |- app -
-             |      |- controller
-             |      |- model
-             |      |- view
-             |
-             |- config -
-             |         |- app_locals.js
-             |         |- config.js
-             |
-             |- node_modules -
-             |               |- sayndo
-             |
-             |- public -
-             |         |- image
-             |         |- javascript
-             |         |- stylesheet
-             |         |- view -
-             |                 | - layout -
-             |                 |          |- default_layout.html
-             |                 |          |- test_layout.html
-             |                 |
-             |                 | - index.html
-             |
-             |- test
-             |- package.json
-             |- server.js
 
 
 
@@ -71,13 +30,29 @@
 
 ## Run server:
 
-  Start the server with default settings on 127.0.0.1:3000.
+  Start the server with default settings on 127.0.0.1:3000
 
-    $ node server.js
+    $ node app.js
 
-  Start the server with custom settings on [host]:[port].
+  Start the server with custom settings on <host>:<port>
 
-    $ node server.js [host] [port]
+    $ node app.js <host> <port>
+
+
+
+## Configuration:
+
+  You have to structure your directories like this:
+
+    app -
+        |- config -
+        |         |- config.js
+        |         |- app_locals.js
+        |
+        |- node_modules
+
+  For detailed information see example/config/config.js.
+  It´s well commented.
 
 
 
@@ -90,7 +65,7 @@
     var app = require('sayndo');
 
     app.guest.GET['/'] = function(req, res) {
-        res.view.render('/index.html', {msg: 'hello world'});
+        res.render('/index.html', {msg: 'hello world'});
     };
 
 
@@ -368,4 +343,10 @@
     mb/sec                 0.06          0.15      |       0.33          1.58
     concurrency             546           804      |        207           423
     longest request       22.05          9.32      |       9.13          9.54
+
+
+
+## Questions and notices:
+
+  Send me a message on github.
 

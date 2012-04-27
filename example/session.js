@@ -14,12 +14,12 @@ var app = require('sayndo');
  * auth type defined in lib/app/config.js
  */
 app.guest.GET['/'] = function(req, res) {
-    // Just show the session object, if there is no one.
-    console.log(res.session);
+  // Just show the session object, if there is no one.
+  console.log(res.session);
 
-    res.session.write({authType: 'user'}, 1, function(err, sessionId) {
-        res.render('/index.html', {local: 'you have the auth type "user" for 1 minute'});
-    });
+  res.session.write({authType: 'user'}, 1, function(err, sessionId) {
+    res.render('/index.html', {local: 'you have the auth type "user" for 1 minute'});
+  });
 };
 
 /*
@@ -27,10 +27,10 @@ app.guest.GET['/'] = function(req, res) {
  * works, uncomment the line below.
  */
 app.user.GET['/'] = function(req, res) {
-    // Just show the session object if one is set.
-    console.log(res.session);
+  // Just show the session object if one is set.
+  console.log(res.session);
 
-    // res.session.remove();
+  // res.session.remove();
 
-    res.render('/index.html', {local: 'you have the auth type "user"'});
+  res.render('/index.html', {local: 'you have the auth type "user"'});
 };

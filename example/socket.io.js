@@ -11,7 +11,7 @@ var app = require('sayndo');
 var io = require('socket.io').listen(app.node);
 
 io.sockets.on('connection', function (socket) {
-    console.log(socket);
+  console.log(socket);
 });
 
 
@@ -20,6 +20,6 @@ io.sockets.on('connection', function (socket) {
  * Routes
  */
 app.guest.GET['/'] = function(req, res) {
-    res.render('/index.html', {local: 'hello world'});
+  res.render('/index.html', {local: 'hello world'});
 };
 
