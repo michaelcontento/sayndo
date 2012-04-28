@@ -8,6 +8,11 @@ mkdir -p ./public
 mkdir -p ./public/image
 mkdir -p ./public/stylesheet
 mkdir -p ./public/javascript
+mkdir -p ./public/javascript/controller
+mkdir -p ./public/javascript/model
+mkdir -p ./public/javascript/view
+mkdir -p ./public/javascript/plugin
+mkdir -p ./public/javascript/vendor
 
 mkdir -p ./test
 
